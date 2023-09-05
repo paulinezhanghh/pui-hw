@@ -1,0 +1,93 @@
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    color:black;
+    font-weight: normal;
+    text-align: center;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:black;
+    font-size: 2pc;
+    text-align: center;
+}
+.yellowHighlight{
+    width: 200px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: yellow;
+}
+#cart{
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    font-weight: normal;
+    font-size: 2pc;
+    text-align: center;
+}
+
+#rolls{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2pc;
+    font-weight: normal;
+    color:black;
+    text-align: center;
+}
+
+
+.galleryPic{
+    width: 405px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    align-content: center;
+    scrollbar-highlight-color: blue;
+}
+
+.galleryPic:hover{
+    background-color:yellow
+}
+
+.detialPagePic{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.detailPageInfo{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropDowns{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.addCart{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Shopping Cart Styling */
+
+.shoppingCart{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.cartPrice{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2pc;
+}
+
+.idInfo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8pc;
+}
