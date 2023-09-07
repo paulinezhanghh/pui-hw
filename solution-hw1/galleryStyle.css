@@ -1,7 +1,14 @@
-h1{
-    font-family: 'Times New Roman', Times, serif;
+.solidLine{
+    height:3px;
+    border-width:0;
     color:black;
-    font-weight: normal;
+    background-color:black
+}
+.heading{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:black;
+    font-size: 2pc;
     text-align: center;
 }
 h2{
@@ -11,19 +18,30 @@ h2{
     font-size: 2pc;
     text-align: center;
 }
-.yellowHighlight{
+.yellowHighlightProduct{
     width: 200px;
     height: 30px;
     margin-left: auto;
     margin-right: auto;
     background-color: yellow;
 }
+.yellowHighlightCart{
+    width: 100px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: yellow;
+}
+
 #cart{
     font-family: Arial, Helvetica, sans-serif;
     color:black;
     font-weight: normal;
     font-size: 2pc;
     text-align: center;
+}
+a{
+    text-decoration: none;
 }
 
 #rolls{
@@ -41,26 +59,43 @@ h2{
     margin-right: auto;
     padding: 10px;
     align-content: center;
-    scrollbar-highlight-color: blue;
+    font-style: normal;
+}
+
+.galleryImg{
+    border:3px solid black;
+    
 }
 
 .galleryPic:hover{
-    background-color:yellow
+    background-color:yellow;
+    font-weight: bold;
 }
 
 .detialPagePic{
     width: 600px;
+    height: 600px;
     margin-left: auto;
     margin-right: auto;
+    border:3px solid black;
 }
 .detailPageInfo{
-    width: 200px;
+    width: 210px;
     margin-left: auto;
     margin-right: auto;
 }
 
 p{
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+.itemName{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.itemPrice{
+    font-weight: normal;
 }
 
 .dropDowns{
@@ -72,6 +107,21 @@ p{
     width: 200px;
     margin-left: auto;
     margin-right: auto;
+    
+}
+.addCartRec{
+    fill:yellow;
+    stroke-width:3;
+    stroke:black
+}
+.addCartText{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.addCartPrice{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
 }
 
 /* Shopping Cart Styling */
@@ -87,7 +137,8 @@ p{
     font-size: 2pc;
 }
 
-.idInfo{
+.toRemove{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8pc;
+    text-decoration: underline;
 }
