@@ -1,0 +1,200 @@
+.all-heading{
+    display:flex;
+}
+
+.all-nevigationOptions{
+    display:flex;
+    width:750px;
+    gap: 150px;
+    justify-content: flex-end;
+
+}
+.all-nevigationSection{
+    width:800px;
+}
+
+.all-solidLine{
+    height:3px;
+    width:805px;
+    border-width: 0;
+    background-color: black;
+}
+
+.all-headingTitle{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.2pc;
+    font-weight: normal;
+    color:black;
+}
+
+.all-product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.all-headingCurrentPage{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-stretch:extra-condensed;
+    color:black;
+    font-size: 2.2pc;
+    width: 175px;
+    height: 40px;
+    background-color: yellow;
+}
+
+.all-headingOtherPage{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color:black;
+    font-size: 2.2pc;
+}
+
+
+.detailPageContainer{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.detialPageSetting{
+    width: 360px;
+    font-size: 1.3pc;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.addCartAction{
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.yellowHighlightProduct{
+    width: 200px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: yellow;
+}
+.yellowHighlightCart{
+    width: 100px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: yellow;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+.all-galleryPic{
+    width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+    padding:10px;
+    align-content: center;
+    font-style: normal;
+}
+
+.galleryImg{
+    border:3px solid black;
+}
+
+.all-galleryPic:hover{
+    background-color:yellow;
+    font-weight: bold;
+}
+
+.detialPagePic{
+    width: 600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+.itemName{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.itemPrice{
+    font-weight: normal;
+}
+
+
+.addCartRec{
+    fill:yellow;
+    stroke-width:3;
+    stroke:black
+}
+.addCartText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.0pc;
+}
+
+
+
+/* Shopping Cart Styling */
+
+.shoppingCart{
+    display: flex;
+    gap: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+img.shoppingCartImg{
+    border: 3px solic black;
+}
+
+
+.cartPrice{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5pc;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.toRemove{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8pc;
+    text-decoration: underline;
+}
+.cartTotalText{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5pc;
+}
+#blankForIndent1{
+    width: 290px;
+}
+
+#totalText{
+    width: 400px;
+}
+
+.cartCheckOut{
+    display: flex;
+    justify-content:flex-end;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5pc;
+}
+#blankForIndent2{
+    width: 45px;
+}
+
+
