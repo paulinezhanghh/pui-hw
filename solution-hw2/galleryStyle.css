@@ -1,3 +1,5 @@
+
+/* Gallery Page Styling */
 .all-heading{
     display:flex;
 }
@@ -157,13 +159,6 @@ select{
     background-position: right 15px top 50%;
     background-size: 25px;
   }
-
-  /* Style the arrow inside the select element: */
-
-  
-  /* Point the arrow upwards when the select box is open (active): */
-
-
 
 /* Shopping Cart Styling */
 .shoppingCartContainer{
