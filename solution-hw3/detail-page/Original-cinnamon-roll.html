@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <title>Original Cinnamon Roll</title>
+  
+  <link rel="stylesheet" type = "text/css" href="../galleryStyle.css"/>
+  <script defer src="../app.js"></script>
+    <body>
+        <div class="all-heading">
+            <a href="../index.html"><img src = "../../assets/logo/logo-01.svg" alt="Logo of business" width="400"/></a>
+            <div class="all-nevigationSection">
+              <div class="all-nevigationOptions">
+                <p class="all-headingCurrentPage_Product">PRODUCT</p>
+                <a href="../cartPage.html"><p class="all-headingOtherPage">CART</p></a>
+              </div>
+              <hr class="all-solidLine">
+              <br>
+              <p class="all-headingTitle">Original Cinnamon Roll</p>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="detailPageContainer">
+            <div class="detialPagePic">
+                <img src = "../../assets/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll Picture" width="600"/>
+            </div>
+
+            <div class="detialPageSetting">
+                <br>
+                <div class="detialPageIntro">
+                    <p>Customize our delicious,</p>
+                    <p>hand-made cinammon roll to</p>
+                    <p>your liking!</p>
+                </div>
+
+                <br>
+                <!--Drop Down Section!!!-->
+
+                <p>Glazing</p>
+                <div class="custom-select">
+                    <select id="glazing" onchange="glazingChange(this)" >
+                    </select>
+                </div>
+                <p>Pack size</p>
+                <div class="custom-select">
+                    <select id="packSize" onchange="packSizeChange(this)">
+                    </select>
+                <div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="detail_addCartAction">
+                    <svg width="500" height="100">
+                        <text class="all-addCartText" x="40" y="32.5">$ 2.49</text>
+                        <rect x="160" class="all-addCartRec" width="200" height="50"/>
+                        <text x="200" class="all-addCartText" y="32.5">ADD TO CART</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    
+
+    </body>
+
+
+</html>
