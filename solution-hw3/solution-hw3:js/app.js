@@ -20,7 +20,7 @@ let glazingOptionsArr=[keepOriginal,sugarMilk,vanillaMilk,doubleChocolate];
 let glazeSelected = document.querySelector('#glazing')
 
 //use loop to populate glazing options
-for (i=0;i<glazingOptionsArr.length;i++){
+for (let i=0;i<glazingOptionsArr.length;i++){
     let option = document.createElement('option');
     option.text = glazingOptionsArr[i].name;
     option.value = glazingOptionsArr[i].priceAdapt;
@@ -67,7 +67,7 @@ let packOptionsArr=[pack1,pack3,pack6,pack12];
 let packSelected = document.querySelector('#packSize')
 
 //use loop to populate pack size options
-for (i=0;i<packOptionsArr.length;i++){
+for (let i=0;i<packOptionsArr.length;i++){
     let option = document.createElement('option');
     option.text = packOptionsArr[i].packSize;
     option.value = packOptionsArr[i].priceAdapt;;
