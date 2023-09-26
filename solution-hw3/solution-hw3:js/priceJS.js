@@ -1,19 +1,19 @@
 ////////////////Glaizing Section////////////////
 let keepOriginal={
     name:'Keep original',
-    priceAdapt:0
+    priceAdapt:0.0,
 };
 let sugarMilk={
     name:'Sugar milk',
-    priceAdapt:0
+    priceAdapt:0.0,
 };
 let vanillaMilk={
     name:'Vanill milk',
-    priceAdapt:0.5
+    priceAdapt:0.5,
 };
 let doubleChocolate={
     name:'Double chocolate',
-    priceAdapt:1.5
+    priceAdapt:1.5,
 };
 //create glazing array
 //find the glazing select tage using id:glazing
@@ -40,7 +40,7 @@ let packPrice = 1;
 //onchange function for glazing
 function glazingChange(element){
     glazePrice=element.value;
-    outputPrize = (2.49+parseFloat(glazePrice))*packPrice;
+    outputPrize = (2.49+parseFloat(glazePrice))*parseInt(packPrice);
     outputPrize=outputPrize.toFixed(2);  //round the price to 2 decimals
     finalPirce.textContent="$ "+outputPrize 
 }
@@ -49,19 +49,19 @@ function glazingChange(element){
 
 let pack1 = {
     packSize:1,
-    priceAdapt:1
+    priceAdapt:1,
 };
 let pack3 = {
     packSize:3,
-    priceAdapt:3
+    priceAdapt:3,
 };
 let pack6 = {
     packSize:6,
-    priceAdapt:5
+    priceAdapt:5,
 };
 let pack12 ={
     packSize:12,
-    priceAdapt:10
+    priceAdapt:10,
 };
 
 //create packSize array
@@ -80,7 +80,7 @@ for (let i=0;i<packOptionsArr.length;i++){
 //onchange function for packSize
 function packSizeChange(element){
     packPrice = element.value;
-    outputPrize = (2.49+parseFloat(glazePrice))*packPrice;
+    outputPrize = (2.49+parseFloat(glazePrice))*parseInt(packPrice);
     outputPrize=outputPrize.toFixed(2);  //round the price to 2 decimals
     finalPirce.textContent="$ "+outputPrize;
 }
