@@ -1,3 +1,4 @@
+////////////////Glaizing Section////////////////
 let keepOriginal={
     name:'Keep original',
     priceAdapt:0
@@ -43,6 +44,8 @@ function glazingChange(element){
     outputPrize=outputPrize.toFixed(2);  //round the price to 2 decimals
     finalPirce.textContent="$ "+outputPrize 
 }
+
+////////////////PackSize Section////////////////
 
 let pack1 = {
     packSize:1,
