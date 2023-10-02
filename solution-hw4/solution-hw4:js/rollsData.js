@@ -1,27 +1,27 @@
 const rolls = {
     "Original": {
         "basePrice": 2.49,
-        "imageFile": "original-cinnamon-roll.jpg"
+        "imageFile": "original-cinnamon-roll.jpg",
     },
     "Apple": {
         "basePrice": 3.49,
-        "imageFile": "apple-cinnamon-roll.jpg"
+        "imageFile": "apple-cinnamon-roll.jpg",
     },
     "Raisin": {
         "basePrice": 2.99,
-        "imageFile": "raisin-cinnamon-roll.jpg"
+        "imageFile": "raisin-cinnamon-roll.jpg",
     },
     "Walnut": {
         "basePrice": 3.49,
-        "imageFile": "walnut-cinnamon-roll.jpg"
+        "imageFile": "walnut-cinnamon-roll.jpg",
     },
     "Double-Chocolate": {
         "basePrice": 3.99,
-        "imageFile": "double-chocolate-cinnamon-roll.jpg"
+        "imageFile": "double-chocolate-cinnamon-roll.jpg",
     },
     "Strawberry": {
         "basePrice": 3.99,
-        "imageFile": "strawberry-cinnamon-roll.jpg"
+        "imageFile": "strawberry-cinnamon-roll.jpg",
     }    
 };
 
@@ -45,7 +45,7 @@ finalPirce.textContent = "$ "+basePrice;
 //add the prefix "../../assets/products/" to find the correct imageFile in the assets folder
 let imageFile = rolls[rollType]["imageFile"];
 let imageSelected = document.querySelector('#rollPicture');
-imageSelected.src="../../assets/products/"+imageFile
+imageSelected.src="../../assets/products/"+imageFile;
 
 //change the heading of each page so that it matches with the roll user clicked
 let headingSelected = document.querySelector('.all-headingTitle');
@@ -59,7 +59,7 @@ class Roll {
         this.size = packSize;
         this.basePrice = basePrice;
     }
-}
+};
 
 //printInstance is the function that will be called each time the user click on "Add to cart"
 //Inside this function, we will define the variables that will be used as 
@@ -72,8 +72,7 @@ function printInstance(){
     let glazeChose = document.querySelector('#glazing');
     let glazeName = glazeChose.options[glazeChose.selectedIndex].text
     let packSizeChose = document.querySelector('#packSize');
-    let packSizeName = packSizeChose.options[packSizeChose.selectedIndex].text
-
+    let packSizeName = packSizeChose.options[packSizeChose.selectedIndex].text;
     let output = new Roll(rollType,glazeName,packSizeName,basePrice);
     cart.push(output);
     console.log(cart);

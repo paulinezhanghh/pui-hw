@@ -43,7 +43,7 @@ function glazingChange(element){
     glazePrice=element.value;
     outputPrize = (basePrice+parseFloat(glazePrice))*parseInt(packPrice);
     outputPrize=outputPrize.toFixed(2);  //round the price to 2 decimals
-    finalPirce.textContent="$ "+outputPrize 
+    finalPirce.textContent="$ "+outputPrize;
 }
 
 ////////////////PackSize Section////////////////
