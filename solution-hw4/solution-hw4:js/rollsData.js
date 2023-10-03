@@ -70,7 +70,7 @@ class Roll {
 //Finally, use console.log() to print the whole cart
 function printInstance(){
     let glazeChose = document.querySelector('#glazing');
-    let glazeName = glazeChose.options[glazeChose.selectedIndex].text
+    let glazeName = glazeChose.options[glazeChose.selectedIndex].text;
     let packSizeChose = document.querySelector('#packSize');
     let packSizeName = packSizeChose.options[packSizeChose.selectedIndex].text;
     let output = new Roll(rollType,glazeName,packSizeName,basePrice);
