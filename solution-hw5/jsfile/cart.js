@@ -100,11 +100,11 @@ for (let i =0;i<allCartItems.length;i++){
     pack.textContent = "Pack Size: "+allCartItems[i].size;
     //5.
     let finalPrice = calculateFinalPrice(allCartItems[i].glazing,allCartItems[i].basePrice,allCartItems[i].size);
-    checkoutPrice+=parseFloat(finalPrice)
+    checkoutPrice+=parseFloat(finalPrice);
     price.textContent = "$" + finalPrice.toFixed(2);
     //6.
-    item.setAttribute("id",""+i)
-    remove.setAttribute("id",""+i)
+    item.setAttribute("id",""+i);
+    remove.setAttribute("id",""+i);
     container.appendChild(item);
 }
 
@@ -129,7 +129,7 @@ function removeItem(element){
     let value = parseInt(element.id);
     let index = sequence.indexOf(value);
     //2.
-    sequence.splice(index,1)
+    sequence.splice(index,1);
     allCartItems.splice(index,1);
     //3.
     const removeSelected = document.getElementById(""+value);
