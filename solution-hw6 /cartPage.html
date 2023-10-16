@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+  
+  <link rel="stylesheet" type = "text/css" href="galleryStyle.css">
+  
+  <script defer src="./jsfile/localStorage.js"></script>
+  <script defer src="./jsfile/cart.js"></script>
+  
+
+  <body>
+    <div class="all-heading">
+      <a href="./index.html"><img src = "../assets/logo/logo-01.svg" alt="Logo of business" width="400"/></a>
+      <div class="shoppingCartDisplay">
+        <div class="all-nevigationSection">
+          <div class="all-nevigationOptions">
+            <a href="./index.html"><p class="all-headingOtherPage">PRODUCT</p></a>
+            <a href="./cartPage.html"><p class="all-headingCurrentPage_Cart">CART</p></a>
+          </div>
+          <hr class="all-solidLine">
+          <br>
+          <p class="all-headingTitle">Shopping Cart</p>
+        </div>
+      
+        <br>
+        <br>
+        <br>
+
+        <div class="all-cartItems">
+          
+          <div class="shoppingCartContainer">
+            <template class="shoppingCartTemplate">
+              <div class="shoppingCartStructure">
+                <div class="shoppingCart">
+                    <img class="all-galleryImg" src = "../assets/products/original-cinnamon-roll.jpg" width="200"/>
+                    <div class="cartDescription">
+                      <p id="cartType">Original Cinnamon Roll</p>
+                      <br>
+                      <p id="cartGlaze">Glazing: Keep original</p>
+                      <br>
+                      <p id="cartPack">Pack Size: 1</p>
+                    </div>
+                    <p class="cartPrice">$2.49</p>
+                </div>
+                <p class="toRemove" onclick="removeItem(this)">Remove</p>
+              </div>
+            </template>
+          </div>
+
+          
+          <hr class="all-solidLine">
+
+          <div class="cartTotalText">
+            <br>
+            <br>
+            <div id="blankForIndent1"></div>
+            <p id="totalText">Total</p>
+            <p class="cartPrice" id="checkoutPrice">$29.94</p>
+          </div>
+          <br>
+          <div class="cartCheckOut">
+            <div id="blankForIndent2"></div>
+            <svg width="200" height="70">
+              <rect x="10" class="all-addCartRec" width="150" height="50"/>
+              <text x="42" y="30" class="all-addCartText">Checkout</text>
+            </svg>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+
+</html>
