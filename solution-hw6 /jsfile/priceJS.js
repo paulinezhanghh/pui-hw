@@ -8,11 +8,11 @@ let sugarMilk={
     priceAdapt:0.0,
 };
 let vanillaMilk={
-    name:'Vanill milk',
+    name:'Vanilla Milk',
     priceAdapt:0.5,
 };
 let doubleChocolate={
-    name:'Double chocolate',
+    name:'Double Chocolate',
     priceAdapt:1.5,
 };
 //create glazing array

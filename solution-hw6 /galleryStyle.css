@@ -168,7 +168,7 @@ select{
 
 /* Shopping Cart Styling */
 .shoppingCartContainer{
-    width: 800px;
+    width: 850px;
 }
 
 .shoppingCart{
@@ -182,7 +182,7 @@ select{
 
 .cartDescription{
     font-family: Arial, Helvetica, sans-serif;
-    width: 230px;
+    width: 300px;
     font-size: 1.2pc;
     line-height: 5px;
     margin-left: -30px;
@@ -218,7 +218,7 @@ select{
 #totalText{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2pc;
-    width: 415px;
+    width: 485px;
 }
 
 .cartCheckOut{
@@ -227,7 +227,7 @@ select{
     font-size: 1.5pc;
 }
 #blankForIndent2{
-    width: 570px;
+    width: 635px;
 }
 
 

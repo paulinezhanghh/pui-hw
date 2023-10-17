@@ -27,12 +27,6 @@ const rolls = {
     }    
 };
 
-//Use new to create 4 rolls that will be used in this hw with their individual
-//rollType, rollGlazing, packSize and basePrice.
-let roll1 = new Roll("Original","Sugar Milk",1,2.49);
-let roll2 = new Roll("Walnut","Vanilla Milk",12,3.49);
-let roll3 = new Roll("Raisin","Sugar Milk",3,2.99);
-let roll4 = new Roll("Apple","Original",3,3.49);
 
 //Create an array to represent the shopping cart and put the 4 created rolls
 //into the this array(allCartItems).
@@ -53,6 +47,8 @@ let itemPosition = document.querySelector(".shoppingCartTemplate");
 //Inside the for loop, I will add all the prices to the checkoutPrice.
 let checkoutPrice = 0;
 
+//Based on the array "allCartItems" I used for hw5, I assign cartItems to this array
+//so that I don't need to edit the names I am using.
 //Inside the for loop, we will do several thing, and I also label corresponding
 //thing inside the for loop:
 //1. We will clone the template for each loop and name it "template" to create 
@@ -69,10 +65,7 @@ let checkoutPrice = 0;
 //6. Each time we create a node, we set the same id to the item(that contains all the 
 //information of a roll in html) and the remove(which is the remove button) so that 
 //we can always keep track of the order of rolls and what rolls are still remained.
-
-
-let allCartItems = cartSet;
-console.log(allCartItems)
+let allCartItems = cartItems;
 for (let i =0;i<allCartItems.length;i++){
     //1.
     let template = itemPosition.content.cloneNode(true);
@@ -94,7 +87,7 @@ for (let i =0;i<allCartItems.length;i++){
     //5.
     let finalPrice = calculateFinalPrice(allCartItems[i].glazing,allCartItems[i].basePrice,allCartItems[i].size);
     checkoutPrice+=parseFloat(finalPrice);
-    price.textContent = "$" + finalPrice
+    price.textContent = "$" + finalPrice.toFixed(2);
     //6.
     item.setAttribute("id",""+i);
     remove.setAttribute("id",""+i);
@@ -149,13 +142,14 @@ function calculateFinalPrice(curGlaze,basePrize,packSize){
     }else if(curGlaze==="Double Chocolate"){
         glazePrice=1.5;
     }
-    if(packSize===6){
+    if(packSize==="6"){
         packPrice=5;
-    }else if(packSize===12){
+    }else if(packSize==="12"){
         packPrice=10;
     }
     return (basePrize+glazePrice)*packPrice;
 }
+
 
 
 
