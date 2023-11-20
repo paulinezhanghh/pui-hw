@@ -1,3 +1,4 @@
+let canvas;
 let homeScene;
 let iconOne;
 let iconTwo;
@@ -21,26 +22,35 @@ function preload() {
   iconSix = loadImage('https://i.imgur.com/aI1fjBe.png');
   heading = loadImage('https://i.imgur.com/stDfg8J.png');
 
+  screen1Background = loadImage("https://i.imgur.com/TCrCUdO.jpeg");
+  progressNum = 0;
+  TeaSetText = loadImage("https://i.imgur.com/hVU6mjb.png");
+  TeaClip = loadImage("https://i.imgur.com/ngEY5Bp.png");
+  TeaClipText = loadImage("https://i.imgur.com/2XS0mOM.png");
+  TeaMat = loadImage("https://i.imgur.com/5Klqtty.png");
+  TeaMatText = loadImage("https://i.imgur.com/5Klqtty.png");
+  
   setInterval(growIcon, 250);
 }
 
 function setup() {
-  createCanvas(1320, 695);
+  canvas = createCanvas(1320, 695);
+  canvas.position(0,0);
+  canvas.style('z-index','-1');
 }
 
 function draw() {
   if(screenNum==0){
     drawHomeScreen();
   }
-  if(screenNum==1){
-    drawScreen1();
-  }
 }
 
 function mousePressed(){
-  if(518<=mouseX  && mouseX<=648 && 355<=mouseY  && mouseY<=515){
-    console.log(mouseX+"  "+mouseY);
-    screenNum = 1;
+  if(screenNum==0){
+    if(518<=mouseX  && mouseX<=648 && 355<=mouseY  && mouseY<=515){ //茶具
+      console.log(mouseX+"  "+mouseY);
+      location.replace("screenOne.html");
+    }
   }
 }
 
@@ -48,8 +58,7 @@ function mousePressed(){
 function drawHomeScreen(){
   background(220);
   imageMode(CORNER);
-  image(homeScene,0,0,width,height);
-  
+  image(homeScene,0,0,width, height);
   fill(color(255,255,255,100));
   strokeWeight(0);
   rect(0,0,width,height);
@@ -67,16 +76,12 @@ function drawHomeScreen(){
   }
   imageMode(CENTER);
   image(iconOne,583,435,130*(1+growSize),160*(1+growSize)); // 茶具
-  image(iconTwo,750,465,70*(1+growSize),70*(1+growSize)); //茶杯
   image(iconThree,875,450,187*(1+growSize),160*(1+growSize)); //茶壶
   image(iconFour,225,595,320*(1+growSize),200*(1+growSize)); // 卷轴
   image(iconFive,480,440,150*(1+growSize),165*(1+growSize)); // 花瓶
   image(iconSix,1150,625,260*(1+growSize),140*(1+growSize)); // 书
 }
 
-function drawScreen1(){
-  background(0,0,0);
-}
 
 function growIcon(){
   if(growSize>=0.035){
