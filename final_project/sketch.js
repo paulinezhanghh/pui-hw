@@ -7,6 +7,9 @@ let iconFour;
 let iconFive;
 let iconSix;
 let heading;
+let stampIcon;
+
+let screen1Background;
 
 let growSize = 0;
 let isGrowing = true;
@@ -21,6 +24,7 @@ function preload() {
   iconFive = loadImage('https://i.imgur.com/xw6u9sx.png');
   iconSix = loadImage('https://i.imgur.com/aI1fjBe.png');
   heading = loadImage('https://i.imgur.com/stDfg8J.png');
+  stampIcon = loadImage('https://i.imgur.com/HmYGAM5.png');
 
   screen1Background = loadImage("https://i.imgur.com/TCrCUdO.jpeg");
   progressNum = 0;
@@ -40,18 +44,20 @@ function setup() {
 }
 
 function draw() {
-  if(screenNum==0){
-    drawHomeScreen();
-  }
+  drawHomeScreen();
 }
 
 function mousePressed(){
-  if(screenNum==0){
-    if(518<=mouseX  && mouseX<=648 && 355<=mouseY  && mouseY<=515){ //茶具
-      console.log(mouseX+"  "+mouseY);
-      location.replace("screenOne.html");
-    }
+  if(518<=mouseX  && mouseX<=648 && 355<=mouseY  && mouseY<=515){ //茶具
+    location.replace("screenOne.html");
   }
+  if(781<=mouseX  && mouseX<=968 && 370<=mouseY  && mouseY<=530){ //茶壶
+    location.replace("chaHu.html");
+  }
+  if(width-70<=mouseX && mouseX<=width-10 && 10<=mouseY && mouseY<=70){
+    location.replace("stampPage.html");
+  }
+
 }
 
 
@@ -80,6 +86,11 @@ function drawHomeScreen(){
   image(iconFour,225,595,320*(1+growSize),200*(1+growSize)); // 卷轴
   image(iconFive,480,440,150*(1+growSize),165*(1+growSize)); // 花瓶
   image(iconSix,1150,625,260*(1+growSize),140*(1+growSize)); // 书
+
+  //draw the menu bar
+  rect(width-80,0,80,height);
+  image(stampIcon,width-40,40,30,30)
+
 }
 
 

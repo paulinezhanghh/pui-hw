@@ -15,24 +15,24 @@ let teaMeasurementText;
 let progressNum = 0;
 let sizeChange = 1;
 let option = 0;
-let correctAnswer = 3;
+let correctAnswer = 4;
 let isWinned = false;
 let isFalse = false;
 
 
 function preload() {
     screen1Background = loadImage("https://i.imgur.com/TCrCUdO.jpeg");
-    teaSetText = loadImage("https://i.imgur.com/hVU6mjb.png");
-    teaClip = loadImage("https://i.imgur.com/ngEY5Bp.png");
-    teaClipText = loadImage("https://i.imgur.com/2XS0mOM.png");
-    teaMat = loadImage("https://i.imgur.com/3nO1xxE.png");
-    teaMatText = loadImage("https://i.imgur.com/5Klqtty.png");
-    teaTray = loadImage("https://i.imgur.com/KScxaLf.png");
-    teaTrayText = loadImage("https://i.imgur.com/Kdr76ef.png");
-    teaStrainer = loadImage("https://i.imgur.com/6aV6dJY.png");
-    teaStrainerText = loadImage("https://i.imgur.com/FHDczDc.png");
-    teaMeasurement = loadImage("https://i.imgur.com/f88mqw2.png");
-    teaMeasurementText = loadImage("https://i.imgur.com/5I4gTB7.png");
+    teaSetText = loadImage("https://i.imgur.com/ECjiO9Q.png");
+    teaMeasurement = loadImage("https://i.imgur.com/FUx2JqO.png");//采茶
+    teaMeasurementText = loadImage("https://i.imgur.com/FTLoZzf.png");
+    teaTray = loadImage("https://i.imgur.com/ky41xsi.png");//筛茶
+    teaTrayText = loadImage("https://i.imgur.com/WP0Ybtl.png");
+    teaClip = loadImage("https://i.imgur.com/iMDnbk1.png");//晒茶
+    teaClipText = loadImage("https://i.imgur.com/8vUV8Yi.png");
+    teaMat = loadImage("https://i.imgur.com/X3dBHyy.png");//熏茶
+    teaMatText = loadImage("https://i.imgur.com/AUllT6L.png");
+    teaStrainer = loadImage("https://i.imgur.com/AAeMsob.png");//包装
+    teaStrainerText = loadImage("https://i.imgur.com/AcVBYvC.png");
 }
 
 
@@ -60,7 +60,7 @@ function drawScreen1(){
     textFont('Cardo');
     fill('black');
     textStyle(BOLD);
-    text(document.getElementById("title").innerText, 390, 150);
+    text(document.getElementById("title").innerText, 390, 130);
 
 
     //learning part
@@ -84,12 +84,12 @@ function drawScreen1(){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        image(teaClip,width/2-40,height/2-120,358,230);
-        image(teaClipText,width/2-250,height/2+70,99,157);
+        image(teaMeasurement,width/2+10,height/2-120,250,161);
+        image(teaMeasurementText,width/2-250,height/2+70,99,157);
         let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Tea Clip";
-        text(document.getElementById("teaSetType").innerText, 500, height/2-10);
+        document.getElementById("teaSetType").textContent = "Picking Tea";
+        text(document.getElementById("teaSetType").innerText, 500, height/2+5);
         imageMode(CORNER);
         strokeWeight(15);
         line(290,610,290+end*0,610);
@@ -98,12 +98,12 @@ function drawScreen1(){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        image(teaMat,width/2-10,height/2-120,358,230);
-        image(teaMatText,width/2-250,height/2+70,99,157);
+        image(teaTray,width/2+30,height/2-120,250,161);
+        image(teaTrayText,width/2-250,height/2+70,99,157);
         let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Tea Mat";
-        text(document.getElementById("teaSetType").innerText, 500, height/2-10);
+        document.getElementById("teaSetType").textContent = "Sieving Tea";
+        text(document.getElementById("teaSetType").innerText, 500, height/2+5);
         imageMode(CORNER);
         strokeWeight(15);
         line(290,610,290+end*0.2,610);
@@ -112,12 +112,12 @@ function drawScreen1(){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        image(teaTray,width/2-10,height/2-120,268,180);
-        image(teaTrayText,width/2-250,height/2+70,99,157);
+        image(teaClip,width/2+20,height/2-120,214,144);
+        image(teaClipText,width/2-250,height/2+70,99,157);
         let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Tea Tray";
-        text(document.getElementById("teaSetType").innerText, 500, height/2-10);
+        document.getElementById("teaSetType").textContent = "Drying Tea";
+        text(document.getElementById("teaSetType").innerText, 500, height/2+5);
         imageMode(CORNER);
         strokeWeight(15);
         line(290,610,290+end*0.4,610);
@@ -126,12 +126,12 @@ function drawScreen1(){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        image(teaStrainer,width/2-10,height/2-120,358,230);
-        image(teaStrainerText,width/2-250,height/2+70,99,157);
+        image(teaMat,width/2+20,height/2-120,200,128);
+        image(teaMatText,width/2-250,height/2+70,99,157);
         let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Tea Strainer";
-        text(document.getElementById("teaSetType").innerText, 500, height/2-10);
+        document.getElementById("teaSetType").textContent = "Fumigation";
+        text(document.getElementById("teaSetType").innerText, 500, height/2+5);
         imageMode(CORNER);
         strokeWeight(15);
         line(290,610,290+end*0.6,610);
@@ -140,12 +140,12 @@ function drawScreen1(){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        image(teaMeasurement,width/2-10,height/2-120,268,180);
-        image(teaMeasurementText,width/2-250,height/2+70,99,157);
+        image(teaStrainer,width/2+20,height/2-120,268,180);
+        image(teaStrainerText,width/2-250,height/2+70,99,157);
         let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Tea Measuring Instrument";
-        text(document.getElementById("teaSetType").innerText, 500, height/2-10);
+        document.getElementById("teaSetType").textContent = "Packaging";
+        text(document.getElementById("teaSetType").innerText, 500, height/2+5);
         imageMode(CORNER);
         strokeWeight(15);
         line(290,610,290+end*0.8,610);
@@ -176,7 +176,7 @@ function drawScreen1(){
         text(document.getElementById("optionD").innerText, 540, 390);
         if(isWinned){
             drawCongrat();
-            localStorage.setItem('stampOneFinished', true);
+            localStorage.setItem('stampTwoFinished', true);
         }
         if(isFalse){
             drawYouAreFalse()

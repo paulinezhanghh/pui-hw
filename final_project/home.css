@@ -17,7 +17,13 @@ p{
     line-height: 25px;
 }
 #blankSpace{
-    height: 330px;
+    height: 350px;
+}
+#blankSpace2{
+    height: 0px;
+}
+#blankSpace3{
+    height: 620px;
 }
 #screenOneText{
     width: 350px;
@@ -65,5 +71,8 @@ p{
     color: white;
 }
 #buttonSet{
+    display: flex;
+}
+#stampButtonSet{
     display: flex;
 }
