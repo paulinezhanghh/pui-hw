@@ -6,7 +6,8 @@
   <link rel="stylesheet" type = "text/css" href="home.css">
   <script defer src="./new.js"></script>
   <head>
-    <body>
+    <!--checking for the viewport size by creating onresize event-->
+    <body onresize="checkViewport()">
         <h1 id="title">Tea Set</h1>
         <h1 id="testing">Testing</h1>
         <h1 id="teaSetType">Tea Clip</h1>
@@ -19,15 +20,17 @@
         <h1 id="optionB">B. To enhance the aroma of the tea</h1>
         <h1 id="optionC">C. To strain out tea leaves and prevent them falling</h1>
         <h1 id="optionD">D. To add decorative patterns to the tea surface</h1>
+        <h1 id="instruction">"Press next button to submit button."</h1>
         <div id = "blankSpace2"></div>
         <div id="buttonSet">
-          <button class="button button1" onclick="prevItem()">⬅ Previous</button>
-          <button class="button button2" onclick="nextItem()">Next ⮕</button>
+          <!--Create onclick event to get to next page-->
+          <button id="prev" onclick="prevItem()">⬅ Previous</button>
+          <button id="next" onclick="nextItem()">Next ⮕</button>
         </div>
-        <br>
-        <br>
 
-        <button class="button button3" onclick="returnHome()">Return To Home</button>
+        <div id = "returnHomeBlank"></div>
+        <!--Create onclick event to return back to home page-->
+        <button id="returnHome" onclick="returnHome()">Return To Home</button>
     </body>
   </head>
 

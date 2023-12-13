@@ -6,11 +6,11 @@
   <link rel="stylesheet" type = "text/css" href="home.css">
   <script defer src="./stampJs.js"></script>
   <head>
-    <body>
+    <body onresize="checkViewport()">
         <div id = "blankSpace3"></div>
         <div id = "stampButtonSet">
-            <button class="button button3" onclick="returnHome()">Return To Home</button>
-            <button class="button button3" onclick="resetStamp()">Reset</button>
+            <button id="returnHome" onclick="returnHome()">Return To Home</button>
+            <button id="reset" onclick="resetStamp()">Reset</button>
         </div>
     </body>
   </head>

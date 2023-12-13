@@ -9,10 +9,21 @@ let iconSix;
 let heading;
 let stampIcon;
 
+
 let screen1Background;
 
 let growSize = 0;
 let isGrowing = true;
+let resize;
+
+let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+if(viewportWidth<=1320*0.7 || viewportHeight<=659*0.7){
+    resize = 0.6;
+}
+else{
+    resize = 1;
+}
 
 let screenNum = 0;
 function preload() {
@@ -38,7 +49,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(1320, 695);
+  canvas = createCanvas(1320*resize, 695*resize);
   canvas.position(0,0);
   canvas.style('z-index','-1');
 }
@@ -48,16 +59,22 @@ function draw() {
 }
 
 function mousePressed(){
-  if(518<=mouseX  && mouseX<=648 && 355<=mouseY  && mouseY<=515){ //茶具
+  if(518*resize<=mouseX  && mouseX<=648*resize && 355*resize<=mouseY  && mouseY<=515*resize){ //茶具
     location.replace("screenOne.html");
   }
-  if(781<=mouseX  && mouseX<=968 && 370<=mouseY  && mouseY<=530){ //茶壶
+  if(781*resize<=mouseX  && mouseX<=968*resize && 370*resize<=mouseY  && mouseY<=530*resize){ //茶壶
     location.replace("chaHu.html");
   }
-  if(width-70<=mouseX && mouseX<=width-10 && 10<=mouseY && mouseY<=70){
+  if(65*resize<=mouseX && mouseX<=385*resize && 495*resize<=mouseY && mouseY<=695*resize){// 卷轴
+    location.replace("juanZhou.html");
+  }
+  if(1020*resize<=mouseX && mouseX<=1280*resize && 555*resize<=mouseY && mouseY<=695*resize){
+    location.replace("book.html");
+  }
+  if(width-70*resize<=mouseX && mouseX<=width-10*resize && 10*resize<=mouseY && mouseY<=70*resize){
     location.replace("stampPage.html");
   }
-
+  //image(iconSix,1150*resize,625*resize,260*(1+growSize)*resize,140*(1+growSize)*resize); // 书
 }
 
 
@@ -68,12 +85,12 @@ function drawHomeScreen(){
   fill(color(255,255,255,100));
   strokeWeight(0);
   rect(0,0,width,height);
-  image(heading,-20,-20,432,224);
+  image(heading,-20*resize,-20*resize,432*resize,224*resize);
   textSize(50);
   textFont('Cardo');
   textStyle(BOLD);
   fill('black');
-  text(document.getElementById("words").innerText, 470, 170);
+  text(document.getElementById("words").innerText, 470*resize, 170*resize);
   if(isGrowing){
     growSize+=0.0012;
   }
@@ -81,15 +98,15 @@ function drawHomeScreen(){
     growSize-=0.0012;
   }
   imageMode(CENTER);
-  image(iconOne,583,435,130*(1+growSize),160*(1+growSize)); // 茶具
-  image(iconThree,875,450,187*(1+growSize),160*(1+growSize)); //茶壶
-  image(iconFour,225,595,320*(1+growSize),200*(1+growSize)); // 卷轴
-  image(iconFive,480,440,150*(1+growSize),165*(1+growSize)); // 花瓶
-  image(iconSix,1150,625,260*(1+growSize),140*(1+growSize)); // 书
+  image(iconOne,583*resize,435*resize,130*(1+growSize)*resize,160*(1+growSize)*resize); // 茶具
+  image(iconThree,875*resize,450*resize,187*(1+growSize)*resize,160*(1+growSize)*resize); //茶壶
+  image(iconFour,225*resize,595*resize,320*(1+growSize)*resize,200*(1+growSize)*resize); // 卷轴
+  //image(iconFive,480*resize,440*resize,150*(1+growSize)*resize,165*(1+growSize)*resize); // 花瓶
+  image(iconSix,1150*resize,625*resize,260*(1+growSize)*resize,140*(1+growSize)*resize); // 书
 
   //draw the menu bar
-  rect(width-80,0,80,height);
-  image(stampIcon,width-40,40,30,30)
+  rect(width-80*resize,0*resize,80*resize,height);
+  image(stampIcon,width-40*resize,40*resize,30*resize,30*resize)
 
 }
 
@@ -101,4 +118,13 @@ function growIcon(){
   else if(growSize<=0){
     isGrowing = true;
   }
+}
+
+
+function checkViewport(){
+  viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+  console.log(viewportWidth+"    "+viewportHeight)
+  window.location.reload();
+
 }

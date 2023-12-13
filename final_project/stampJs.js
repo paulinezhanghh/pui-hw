@@ -22,6 +22,16 @@ if(localStorage.getItem('stampFourFinished')==null){
     localStorage.setItem('stampFourFinished', false);
 }
 
+let resize;
+
+let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+if(viewportWidth<=1320*0.7 || viewportHeight<=659*0.7){
+    resize = 0.6;
+}
+else{
+    resize = 1;
+}
 
 
 function preload() {
@@ -41,45 +51,64 @@ function preload() {
 
 
 function setup() {
-    canvas = createCanvas(1320, 695);
+    canvas = createCanvas(1320*resize, 695*resize);
     canvas.position(0,0);
     canvas.style('z-index','-1');
 }
 function draw(){
+    if(resize!=1){
+        let returnHome = document.getElementById("returnHome");
+        returnHome.style.fontSize="8px";
+        returnHome.style.padding = "7px"
+        returnHome.style.height = "28px"
+        returnHome.style.borderWidth ="1px";
+        returnHome.style.borderRadius ="7px";
+
+        let reset = document.getElementById("reset");
+        reset.style.fontSize="8px";
+        reset.style.padding = "7px"
+        reset.style.height = "28px"
+        reset.style.borderWidth ="1px";
+        reset.style.borderRadius ="7px";
+
+        let returnBlank = document.getElementById("blankSpace3");
+        returnBlank.style.height="370px";
+    }
+  
     imageMode(CORNER);
     image(screenBackground,0,0,width,height);
     fill(color(255,255,255,100));
     strokeWeight(0);
     rect(0,0,width,height);
-    image(heading,-20,-20,432,224);
+    image(heading,-20*resize,-20*resize,432*resize,224*resize);
 
     imageMode(CENTER);
-    image(fisher,100,height/2+100,660,450);
+    image(fisher,100*resize,height/2+100*resize,660*resize,450*resize);
 
     imageMode(CORNER);
     const stampOneCheck = JSON.parse(localStorage.getItem('stampOneFinished'));
     if(!stampOneCheck){
-        image(stampOneBW,550,30,185,300);
+        image(stampOneBW,550*resize,30*resize,185*resize,300*resize);
     }else{
-        image(stampOne,550,30,185,300);
+        image(stampOne,550*resize,30*resize,185*resize,300*resize);
     }
     const stampTwoCheck = JSON.parse(localStorage.getItem('stampTwoFinished'));
     if(!stampTwoCheck){
-        image(stampTwoBW,950,30,185,300);
+        image(stampTwoBW,950*resize,30*resize,185*resize,300*resize);
     }else{
-        image(stampTwo,950,30,185,300);
+        image(stampTwo,950*resize,30*resize,185*resize,300*resize);
     }
     const stampThreeCheck = JSON.parse(localStorage.getItem('stampThreeFinished'));
     if(!stampThreeCheck){
-        image(stampThreeBW,550,370,185,300);
+        image(stampThreeBW,550*resize,370*resize,185*resize,300*resize);
     }else{
-        image(stampThree,550,370,185,300);
+        image(stampThree,550*resize,370*resize,185*resize,300*resize);
     }
     const stampFourCheck = JSON.parse(localStorage.getItem('stampFourFinished'));
     if(!stampFourCheck){
-        image(stampFourBW,950,400,200,230);
+        image(stampFourBW,950*resize,400*resize,200*resize,230*resize);
     }else{
-        image(stampFour,950,400,200,230);
+        image(stampFour,950*resize,400*resize,200*resize,230*resize);
     }
 
 }
@@ -93,4 +122,17 @@ function resetStamp(){
     localStorage.setItem('stampTwoFinished', false);
     localStorage.setItem('stampThreeFinished', false);
     localStorage.setItem('stampFourFinished', false);
+}
+
+function checkViewport(){
+    viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    console.log(viewportWidth+"    "+viewportHeight)
+    
+    if(viewportWidth<=1320*0.8 || viewportHeight<=695*0.8){
+        window.location.reload();
+    }
+    else{
+        window.location.reload();
+    }
 }
