@@ -11,58 +11,57 @@ let teaStrainer;
 let teaStrainerText;
 let teaMeasurement;
 let teaMeasurementText;
-
 let progressNum = 0;
 let sizeChange = 1;
 let option = 0;
-let correctAnswer = 4;
+let correctAnswer = 3;
 let isWinned = false;
 let isFalse = false;
 let resize;
 
-//check the viewport while the page reloaded
+//check the viewport when the page reload.
 let viewportWidth = window.innerWidth || document.documentElement.clientWidth;
 let viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-//if it's in a smaller viewport, change resize to 0.6
 if(viewportWidth<=1320*0.7 || viewportHeight<=659*0.7){
     resize = 0.6;
 }
-//if it's in the larger viewport, let resize be 1
 else{
     resize = 1;
 }
 
-//preload all the images
+
+
 function preload() {
     screen1Background = loadImage("https://i.imgur.com/TCrCUdO.jpeg");
-    teaSetText = loadImage("https://i.imgur.com/IBGRglB.png");
-    teaMeasurement = loadImage("https://i.imgur.com/DKAvrLd.png");//Song dynasty
-    teaMeasurementText = loadImage("https://i.imgur.com/OtWocbE.png");
-    teaTray = loadImage("https://i.imgur.com/qWKf2fu.png");// Yuan dynasty
-    teaTrayText = loadImage("https://i.imgur.com/WL9bWu7.png");
-    teaClip = loadImage("https://i.imgur.com/4YSV8eU.png");// Tang dynasty
-    teaClipText = loadImage("https://i.imgur.com/4VVD6Yw.png");
-    teaMat = loadImage("https://i.imgur.com/M7PD7r5.png");// Ming dynasty
-    teaMatText = loadImage("https://i.imgur.com/j87KMOf.png");
-    teaStrainer = loadImage("https://i.imgur.com/TWolOXi.png");// Qing dynasty
-    teaStrainerText = loadImage("https://i.imgur.com/XwRfOw3.png");
+    teaSetText = loadImage("https://i.imgur.com/hVU6mjb.png");
+    teaClip = loadImage("https://i.imgur.com/ngEY5Bp.png");
+    teaClipText = loadImage("https://i.imgur.com/2XS0mOM.png");
+    teaMat = loadImage("https://i.imgur.com/3nO1xxE.png");
+    teaMatText = loadImage("https://i.imgur.com/5Klqtty.png");
+    teaTray = loadImage("https://i.imgur.com/KScxaLf.png");
+    teaTrayText = loadImage("https://i.imgur.com/Kdr76ef.png");
+    teaStrainer = loadImage("https://i.imgur.com/6aV6dJY.png");
+    teaStrainerText = loadImage("https://i.imgur.com/FHDczDc.png");
+    teaMeasurement = loadImage("https://i.imgur.com/f88mqw2.png");
+    teaMeasurementText = loadImage("https://i.imgur.com/5I4gTB7.png");
 }
 
-//create the canvas and make visual elements the background of html page.
+
+
+
 function setup() {
     canvas = createCanvas(1320*resize, 695*resize);
     canvas.position(0,0);
     canvas.style('z-index','-1');
 }
 
-//call the drawScreen function
 function draw() {
-    drawScreen();
+    drawScreen1();
 }
 
-//function that draws the whole screen.
-function drawScreen(){
-    //show the background and the title of the page.
+
+
+function drawScreen1(){
     imageMode(CORNER);
     image(screen1Background,0,0,width,height);
     fill(color(255,255,255,100));
@@ -72,7 +71,7 @@ function drawScreen(){
     textFont('Cardo');
     fill('black');
     textStyle(BOLD);
-    text(document.getElementById("title").innerText, 390*resize, 130*resize);
+    text(document.getElementById("title").innerText, 390*resize, 150*resize);
 
 
     //learning part
@@ -99,6 +98,7 @@ function drawScreen(){
         let container = document.getElementById("screenOneText");
         container.style.width="200px";
         container.style.marginLeft = "300px";
+
         //change the font style of description
         let word = document.getElementById("TeaClipDescription");
         word.style.fontSize = "9px";
@@ -113,7 +113,7 @@ function drawScreen(){
         let next = document.getElementById("next");
         let returnHome = document.getElementById("returnHome");
 
-        //change the CSS style of prev button to fit smaller size screen
+        //change the style of prev button to fit smaller size screen
         prev.style.fontSize = "7px";
         prev.style.padding = "5px"
         prev.style.height = "25px"
@@ -139,38 +139,39 @@ function drawScreen(){
         
         //change the size of the blank space between description and button
         document.getElementById("blankSpace2").style.height = "84px";
+
     }
     //first page of learning
     if(progressNum==0){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        //show image and text
-        image(teaMeasurement,width/2+10*resize,height/2-115*resize,250*resize,161*resize);
-        image(teaMeasurementText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
+        //show image and text 
+        image(teaClip,width/2-40*resize,height/2-120*resize,358*resize,230*resize);
+        image(teaClipText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "Chinese tea culture originated from Song dynasty in Guangdong which is in south side of China. It became the most popular culture in that time. A famous saying about this is that people value tea more than any other things they used everyday.";
+        let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Song Dynasty";
-        text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
+        document.getElementById("teaSetType").textContent = "Tea Clip";
+        text(document.getElementById("teaSetType").innerText, 500*resize, height/2-10*resize);
         imageMode(CORNER);
         strokeWeight(15);
         //change the line progress
         line(290*resize,610*resize,(290+end*0)*resize,610*resize);
     }
-    //second page of learning
+    //second page of learning 
     else if(progressNum==1){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        //show image and text
-        image(teaTray,width/2+10*resize,height/2-110*resize,230*resize,141*resize);
-        image(teaTrayText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
+        //show image and text 
+        image(teaMat,width/2-10*resize,height/2-120*resize,358*resize,230*resize);
+        image(teaMatText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "In Yuan dynasty, tea tasting is slightly different and people usually put salt and pepper in the tea. In north side of ancient China, people tends to brew the tea with ginger and pepper. In south side of ancient China, people tends to simmer the tea. ";
+        let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Yuan Dynasty";
-        text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
+        document.getElementById("teaSetType").textContent = "Tea Mat";
+        text(document.getElementById("teaSetType").innerText, 500*resize, height/2-10*resize);
         imageMode(CORNER);
         strokeWeight(15);
         //change the line progress
@@ -181,51 +182,50 @@ function drawScreen(){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        //show image and text
-        image(teaClip,width/2,height/2-105*resize,214*resize,144*resize);
-        image(teaClipText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
+        //show image and text 
+        image(teaTray,width/2-10*resize,height/2-120*resize,268*resize,180*resize);
+        image(teaTrayText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "In Tang dynasty, because of the booming social context, tea tasting becomes a way to enjoy leisure time. As it becomes an art, many rich people hired others to brew the tea for serving guests. Royal family tended to buy previous tea leaves to serve guests.";
+        let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Tang Dynasty";
-        text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
+        document.getElementById("teaSetType").textContent = "Tea Tray";
+        text(document.getElementById("teaSetType").innerText, 500*resize, height/2-10*resize);
         imageMode(CORNER);
         strokeWeight(15);
         //change the line progress
         line(290*resize,610*resize,(290+end*0.4)*resize,610*resize);
     }
-    //fourth page of learning
+    //fourth page of learning 
     else if(progressNum==3){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        //show image and text
-        image(teaMat,width/2-20*resize,height/2-105*resize,200*resize,128*resize);
-        image(teaMatText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
+        //show image and text 
+        image(teaStrainer,width/2-10*resize,height/2-120*resize,358*resize,230*resize);
+        image(teaStrainerText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "During Yuan Dynasty, Chinese tea culture emphasized refined etiquette and advanced brewing techniques. The royal and noble classes considered tea art a unique ceremony, emphasizing taste and quality, setting a robust foundation for later tea traditions.";
+        let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Ming Dynasty";
-        text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
+        document.getElementById("teaSetType").textContent = "Tea Strainer";
+        text(document.getElementById("teaSetType").innerText, 500*resize, height/2-10*resize);
         imageMode(CORNER);
         strokeWeight(15);
         //change the line progress
         line(290*resize,610*resize,(290+end*0.6)*resize,610*resize);
     }
-    //fifth page of learning
+    //fifth page of learning 
     else if(progressNum==4){
         option = 0;
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
-        //show image and text
-        image(teaStrainer,width/2-20*resize,height/2-105*resize,250*resize,160*resize);
-        image(teaStrainerText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
+        //show image and text 
+        image(teaMeasurement,width/2-10*resize,height/2-120*resize,268*resize,180*resize);
+        image(teaMeasurementText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = 
-        "In the Qing Dynasty, Chinese tea art emphasized refinement and elegance, seen as a sophisticated cultural activity by the imperial court and literati. It contributed rich elements to the unique development of the tea ceremony.";
+        let introText = "The tea clip, also known as tea chopsticks, serves the same purpose as a tea spoon, allowing the removal of tea residue from the teapot. It can also be used to hold tea cups for washing, providing both heat protection and hygiene.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Qing Dynasty";
-        text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
+        document.getElementById("teaSetType").textContent = "Tea Measuring Instrument";
+        text(document.getElementById("teaSetType").innerText, 500*resize, height/2-10*resize);
         imageMode(CORNER);
         strokeWeight(15);
         //change the line progress
@@ -249,7 +249,7 @@ function drawScreen(){
         //show the question content
         text(document.getElementById("question1").innerText, 500*resize, 270*resize);
         noFill();
-        strokeWeight(2);
+        strokeWeight(2*resize);
         //draw the selection rectangles
         rect(500*resize,285*resize,18*resize,18*resize);
         rect(500*resize,315*resize,18*resize,18*resize);
@@ -270,8 +270,8 @@ function drawScreen(){
         //if the current option is correct, call function drawCongrat to display congrats pop-up
         if(isWinned){
             drawCongrat();
-            //update the stampTwoFinished(second unit) icon as true so this stamp will be colorful
-            localStorage.setItem('stampFourFinished', true);
+            //update the stampOneFinished(first unit) icon as true so this stamp will be colorful
+            localStorage.setItem('stampOneFinished', true);
         }
         //if the current option is wrong, call function drawCongrat to display false pop-up
         if(isFalse){
@@ -343,8 +343,8 @@ function drawYouAreFalse(){
 
 //function that detect mouse clicking event
 function mousePressed(){
-    //if user is in testing section, check which option they are choosing
     if(progressNum==5){
+        //if user is in testing section, check which option they are choosing
         if(500*resize<=mouseX && mouseX<=518*resize){
             if(285*resize<=mouseY && mouseY<=303*resize){
                 option = 1;
@@ -364,8 +364,9 @@ function mousePressed(){
     //if the user click "X" icon of the pop-up, isWinned will be initialized
     if(isWinned){
         if(width/2-165*resize<=mouseX && mouseX<=width/2-135*resize && mouseY<=height/2-65*resize && mouseY>=height/2-95*resize){
-            isWinned=false;
+                isWinned=false;
         }
+
     }
 
     //if the user click "X" icon of the pop-up, isFalse will be initialized
@@ -401,7 +402,7 @@ function prevItem(){
 
 //function that returns the home page
 function returnHome(){
-    location.replace("index.html");
+    location.replace("../index.html");
 }
 
 //function that check the viewport when user is resizing the browser
@@ -409,6 +410,7 @@ function checkViewport(){
     viewportWidth = window.innerWidth || document.documentElement.clientWidth;
     viewportHeight = window.innerHeight || document.documentElement.clientHeight;
     console.log(viewportWidth+"    "+viewportHeight)
+    
     if(viewportWidth<=1320*0.8 || viewportHeight<=695*0.8){
         window.location.reload();
     }

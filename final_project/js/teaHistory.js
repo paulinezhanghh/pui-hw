@@ -35,17 +35,17 @@ else{
 //preload all the images
 function preload() {
     screen1Background = loadImage("https://i.imgur.com/TCrCUdO.jpeg");
-    teaSetText = loadImage("https://i.imgur.com/ECjiO9Q.png");
-    teaMeasurement = loadImage("https://i.imgur.com/FUx2JqO.png");//采茶
-    teaMeasurementText = loadImage("https://i.imgur.com/FTLoZzf.png");
-    teaTray = loadImage("https://i.imgur.com/ky41xsi.png");//筛茶
-    teaTrayText = loadImage("https://i.imgur.com/WP0Ybtl.png");
-    teaClip = loadImage("https://i.imgur.com/iMDnbk1.png");//晒茶
-    teaClipText = loadImage("https://i.imgur.com/8vUV8Yi.png");
-    teaMat = loadImage("https://i.imgur.com/X3dBHyy.png");//熏茶
-    teaMatText = loadImage("https://i.imgur.com/AUllT6L.png");
-    teaStrainer = loadImage("https://i.imgur.com/AAeMsob.png");//包装
-    teaStrainerText = loadImage("https://i.imgur.com/AcVBYvC.png");
+    teaSetText = loadImage("https://i.imgur.com/IBGRglB.png");
+    teaMeasurement = loadImage("https://i.imgur.com/DKAvrLd.png");//Song dynasty
+    teaMeasurementText = loadImage("https://i.imgur.com/OtWocbE.png");
+    teaTray = loadImage("https://i.imgur.com/qWKf2fu.png");// Yuan dynasty
+    teaTrayText = loadImage("https://i.imgur.com/WL9bWu7.png");
+    teaClip = loadImage("https://i.imgur.com/4YSV8eU.png");// Tang dynasty
+    teaClipText = loadImage("https://i.imgur.com/4VVD6Yw.png");
+    teaMat = loadImage("https://i.imgur.com/M7PD7r5.png");// Ming dynasty
+    teaMatText = loadImage("https://i.imgur.com/j87KMOf.png");
+    teaStrainer = loadImage("https://i.imgur.com/TWolOXi.png");// Qing dynasty
+    teaStrainerText = loadImage("https://i.imgur.com/XwRfOw3.png");
 }
 
 //create the canvas and make visual elements the background of html page.
@@ -68,7 +68,7 @@ function drawScreen(){
     fill(color(255,255,255,100));
     strokeWeight(0);
     rect(0,0,width,height);
-    textSize(45);
+    textSize(45*resize);
     textFont('Cardo');
     fill('black');
     textStyle(BOLD);
@@ -146,12 +146,12 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaMeasurement,width/2+10*resize,height/2-120*resize,250*resize,161*resize);
+        image(teaMeasurement,width/2+10*resize,height/2-115*resize,250*resize,161*resize);
         image(teaMeasurementText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "Picking tea is a crucial step in Chinese tea production, typically carried out during the spring harvest. It involves selecting the youngest and greenest tea buds, emphasizing manual craftsmanship to ensure the high-quality taste and aroma of the tea leaves." ;
+        let introText = "Chinese tea culture originated from Song dynasty in Guangdong which is in south side of China. It became the most popular culture in that time. A famous saying about this is that people value tea more than any other things they used everyday.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Picking Tea";
+        document.getElementById("teaSetType").textContent = "Song Dynasty";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -164,12 +164,12 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaTray,width/2+30*resize,height/2-120*resize,250*resize,161*resize);
+        image(teaTray,width/2+10*resize,height/2-110*resize,230*resize,141*resize);
         image(teaTrayText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "Sieving is a process of using meticulous screening to remove impurities, which ensurs the pure quality of the tea leaves. This process results in clearer tea infusion. Therefore, the taste and aroma of the tea leaves will be imrpoved." ;
+        let introText = "In Yuan dynasty, tea tasting is slightly different and people usually put salt and pepper in the tea. In north side of ancient China, people tends to brew the tea with ginger and pepper. In south side of ancient China, people tends to simmer the tea. ";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Sieving Tea";
+        document.getElementById("teaSetType").textContent = "Yuan Dynasty";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -182,12 +182,12 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaClip,width/2+20*resize,height/2-120*resize,214*resize,144*resize);
+        image(teaClip,width/2,height/2-105*resize,214*resize,144*resize);
         image(teaClipText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "Usually, tea leaves are sun-dried or roasted naturally to adjust their moisture content, enhancing the taste and aroma. This traditional process not only aids in preserving the tea but also imparts unique flavor and quality to the leaves.";
+        let introText = "In Tang dynasty, because of the booming social context, tea tasting becomes a way to enjoy leisure time. As it becomes an art, many rich people hired others to brew the tea for serving guests. Royal family tended to buy previous tea leaves to serve guests.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Drying Tea";
+        document.getElementById("teaSetType").textContent = "Tang Dynasty";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -200,13 +200,12 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaMat,width/2+20*resize,height/2-120*resize,200*resize,128*resize);
+        image(teaMat,width/2-20*resize,height/2-105*resize,200*resize,128*resize);
         image(teaMatText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = 
-        "Through skillful smoke curing, tea leaves absorb a unique smoky aroma, adding intricate layers to the taste and showcasing a distinctive flavor. This traditional process imparts a deep, aged fragrance and a unique smokiness to the tea leaves." ;
+        let introText = "During Yuan Dynasty, Chinese tea culture emphasized refined etiquette and advanced brewing techniques. The royal and noble classes considered tea art a unique ceremony, emphasizing taste and quality, setting a robust foundation for later tea traditions.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Fumigation";
+        document.getElementById("teaSetType").textContent = "Ming Dynasty";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -219,13 +218,13 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaStrainer,width/2+20*resize,height/2-120*resize,268*resize,180*resize);
+        image(teaStrainer,width/2-20*resize,height/2-105*resize,250*resize,160*resize);
         image(teaStrainerText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
         let introText = 
-        "Tea packaging is a delicate art in Chinese tea culture, focusing on vessel selection. Containers like tea canisters preserve the aroma and quality, emphasizing attention to detail and showcasing a profound respect for tea leaves." ;
+        "In the Qing Dynasty, Chinese tea art emphasized refinement and elegance, seen as a sophisticated cultural activity by the imperial court and literati. It contributed rich elements to the unique development of the tea ceremony.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Packaging";
+        document.getElementById("teaSetType").textContent = "Qing Dynasty";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -250,7 +249,7 @@ function drawScreen(){
         //show the question content
         text(document.getElementById("question1").innerText, 500*resize, 270*resize);
         noFill();
-        strokeWeight(2);
+        strokeWeight(2*resize);
         //draw the selection rectangles
         rect(500*resize,285*resize,18*resize,18*resize);
         rect(500*resize,315*resize,18*resize,18*resize);
@@ -272,7 +271,7 @@ function drawScreen(){
         if(isWinned){
             drawCongrat();
             //update the stampTwoFinished(second unit) icon as true so this stamp will be colorful
-            localStorage.setItem('stampTwoFinished', true);
+            localStorage.setItem('stampFourFinished', true);
         }
         //if the current option is wrong, call function drawCongrat to display false pop-up
         if(isFalse){
@@ -402,7 +401,7 @@ function prevItem(){
 
 //function that returns the home page
 function returnHome(){
-    location.replace("index.html");
+    location.replace("../index.html");
 }
 
 //function that check the viewport when user is resizing the browser

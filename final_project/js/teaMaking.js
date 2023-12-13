@@ -15,7 +15,7 @@ let teaMeasurementText;
 let progressNum = 0;
 let sizeChange = 1;
 let option = 0;
-let correctAnswer = 1;
+let correctAnswer = 4;
 let isWinned = false;
 let isFalse = false;
 let resize;
@@ -35,17 +35,17 @@ else{
 //preload all the images
 function preload() {
     screen1Background = loadImage("https://i.imgur.com/TCrCUdO.jpeg");
-    teaSetText = loadImage("https://i.imgur.com/FZCd8Dp.png");
-    teaMeasurement = loadImage("https://i.imgur.com/jRrmw30.png");//wash the tea sets 洗茶杯
-    teaMeasurementText = loadImage("https://i.imgur.com/iyf0z45.png");
-    teaTray = loadImage("https://i.imgur.com/JUFfq8Q.png");//put tea leaves inside 放茶叶
-    teaTrayText = loadImage("https://i.imgur.com/XPk6BPe.png");
-    teaClip = loadImage("https://i.imgur.com/j0MuzZr.png");//put water inside 放水
-    teaClipText = loadImage("https://i.imgur.com/CxftXSh.png");
-    teaMat = loadImage("https://i.imgur.com/5JFmFFW.png");// 循环倒茶
-    teaMatText = loadImage("https://i.imgur.com/8fpmGRA.png");
-    teaStrainer = loadImage("https://i.imgur.com/DVkINM1.png");// 奉茶
-    teaStrainerText = loadImage("https://i.imgur.com/GktcMDE.png");
+    teaSetText = loadImage("https://i.imgur.com/ECjiO9Q.png");
+    teaMeasurement = loadImage("https://i.imgur.com/FUx2JqO.png");//采茶
+    teaMeasurementText = loadImage("https://i.imgur.com/FTLoZzf.png");
+    teaTray = loadImage("https://i.imgur.com/ky41xsi.png");//筛茶
+    teaTrayText = loadImage("https://i.imgur.com/WP0Ybtl.png");
+    teaClip = loadImage("https://i.imgur.com/iMDnbk1.png");//晒茶
+    teaClipText = loadImage("https://i.imgur.com/8vUV8Yi.png");
+    teaMat = loadImage("https://i.imgur.com/X3dBHyy.png");//熏茶
+    teaMatText = loadImage("https://i.imgur.com/AUllT6L.png");
+    teaStrainer = loadImage("https://i.imgur.com/AAeMsob.png");//包装
+    teaStrainerText = loadImage("https://i.imgur.com/AcVBYvC.png");
 }
 
 //create the canvas and make visual elements the background of html page.
@@ -146,12 +146,12 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaMeasurement,width/2+10*resize,height/2-115*resize,250*resize,161*resize);
+        image(teaMeasurement,width/2+10*resize,height/2-120*resize,250*resize,161*resize);
         image(teaMeasurementText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "When it comes to the tea tools that encounter tea the most, like tea infusers, fairness cups, and tea cups, the cleaning process is straightforward: after a quick wash, pour boiling water over them, then let them air-dry naturally.";
+        let introText = "Picking tea is a crucial step in Chinese tea production, typically carried out during the spring harvest. It involves selecting the youngest and greenest tea buds, emphasizing manual craftsmanship to ensure the high-quality taste and aroma of the tea leaves." ;
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Washing Tea Set";
+        document.getElementById("teaSetType").textContent = "Picking Tea";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -164,12 +164,12 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaTray,width/2+10*resize,height/2-120*resize,250*resize,161*resize);
+        image(teaTray,width/2+30*resize,height/2-120*resize,250*resize,161*resize);
         image(teaTrayText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "First, we need to separate the tea leaves by size and use a tea spoon to gently place them into the teapot. Put the coarse ones at the bottom and the fine ones on top. Avoid filling the teapot too much; seven or eight-tenths full is sufficient.";
+        let introText = "Sieving is a process of using meticulous screening to remove impurities, which ensurs the pure quality of the tea leaves. This process results in clearer tea infusion. Therefore, the taste and aroma of the tea leaves will be imrpoved." ;
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Put Leaves In";
+        document.getElementById("teaSetType").textContent = "Sieving Tea";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -182,12 +182,12 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaClip,width/2,height/2-105*resize,214*resize,144*resize);
+        image(teaClip,width/2+20*resize,height/2-120*resize,214*resize,144*resize);
         image(teaClipText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "Lift the kettle, allowing water to flow directly into the teapot. Adjust the height of the kettle up and down to ensure thorough immersion of the tea leaves. Also, pay attention to the upright posture of the person pouring the water.";
+        let introText = "Usually, tea leaves are sun-dried or roasted naturally to adjust their moisture content, enhancing the taste and aroma. This traditional process not only aids in preserving the tea but also imparts unique flavor and quality to the leaves.";
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Pouring Water";
+        document.getElementById("teaSetType").textContent = "Drying Tea";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -200,12 +200,13 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaMat,width/2,height/2-105*resize,200*resize,128*resize);
+        image(teaMat,width/2+20*resize,height/2-120*resize,200*resize,128*resize);
         image(teaMatText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "When pouring tea, avoid filling the cups all at once. This might cause the color of the tea to be different. Instead, pour the tea circularly to ensure that tea is evenly distributed in each tea cup, and the color is consistent.";
+        let introText = 
+        "Through skillful smoke curing, tea leaves absorb a unique smoky aroma, adding intricate layers to the taste and showcasing a distinctive flavor. This traditional process imparts a deep, aged fragrance and a unique smokiness to the tea leaves." ;
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Pouring Tea";
+        document.getElementById("teaSetType").textContent = "Fumigation";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -218,13 +219,13 @@ function drawScreen(){
         document.getElementById("blankSpace2").style.height = "0px";
         imageMode(CENTER);
         //show image and text
-        image(teaStrainer,width/2-20*resize,height/2-105*resize,250*resize,160*resize);
+        image(teaStrainer,width/2+20*resize,height/2-120*resize,268*resize,180*resize);
         image(teaStrainerText,width/2-250*resize,height/2+70*resize,99*resize,157*resize);
         //change the description text
-        let introText = "When serving the tea, make sure you hold the tea cup by both hands to show the respect to other people. The order of tea serving should based on the age, social status or how close you are with this person. The higher the age, the higher the order."
-        "When pouring tea, avoid filling the cups all at once. Instead, circulate to ensure that water is evenly distributed in each tea cup, and the color is consistent.";
+        let introText = 
+        "Tea packaging is a delicate art in Chinese tea culture, focusing on vessel selection. Containers like tea canisters preserve the aroma and quality, emphasizing attention to detail and showcasing a profound respect for tea leaves." ;
         document.getElementById("TeaClipDescription").textContent = introText;
-        document.getElementById("teaSetType").textContent = "Serving Tea";
+        document.getElementById("teaSetType").textContent = "Packaging";
         text(document.getElementById("teaSetType").innerText, 500*resize, height/2+5*resize);
         imageMode(CORNER);
         strokeWeight(15);
@@ -249,7 +250,7 @@ function drawScreen(){
         //show the question content
         text(document.getElementById("question1").innerText, 500*resize, 270*resize);
         noFill();
-        strokeWeight(2);
+        strokeWeight(2*resize);
         //draw the selection rectangles
         rect(500*resize,285*resize,18*resize,18*resize);
         rect(500*resize,315*resize,18*resize,18*resize);
@@ -271,7 +272,7 @@ function drawScreen(){
         if(isWinned){
             drawCongrat();
             //update the stampTwoFinished(second unit) icon as true so this stamp will be colorful
-            localStorage.setItem('stampThreeFinished', true);
+            localStorage.setItem('stampTwoFinished', true);
         }
         //if the current option is wrong, call function drawCongrat to display false pop-up
         if(isFalse){
@@ -401,7 +402,7 @@ function prevItem(){
 
 //function that returns the home page
 function returnHome(){
-    location.replace("index.html");
+    location.replace("../index.html");
 }
 
 //function that check the viewport when user is resizing the browser
